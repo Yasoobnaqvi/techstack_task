@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #app {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        #user-info {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        #user-info p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        #search-input {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #product-table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #product-table th, #product-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        #product-table th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="user-info">
+            <p>Welcome <span id="user-email"> </span></p>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <input type="text" id="search-input" oninput="searchProducts()" placeholder="Search products">
+        <table id="product-table">
+            <!-- Product table will be displayed here -->
+        </table>
+    </div>
+
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>
